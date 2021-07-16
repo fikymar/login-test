@@ -5,13 +5,25 @@ const Form = () => {
 		<div className="form_wrapper">
 			<form>
 				<div className="input_wrapper">
-					<input type="email" name="Email" id="Email" />
+					<input
+						type="email"
+						name="Email"
+						id="Email"
+						placeholder="nekdo@neco.com"
+						required
+					/>
 					<label htmlFor="Email" value="email">
 						Email:
 					</label>
 				</div>
 				<div className="input_wrapper">
-					<input type="password" name="Password" id="Password" />
+					<input
+						type="password"
+						name="Password"
+						id="Password"
+						placeholder="password"
+						required
+					/>
 
 					<label htmlFor="Password">Heslo:</label>
 				</div>
