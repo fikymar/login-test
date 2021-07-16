@@ -75,8 +75,8 @@ form input {
 form label {
   display: block;
   font-size: large;
-  -webkit-transform: translateY(-2.3rem);
-          transform: translateY(-2.3rem);
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
   padding-left: 0.5rem;
 }
 

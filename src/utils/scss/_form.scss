@@ -11,9 +11,6 @@ form {
 	display: flex;
 	flex-direction: column;
 
-	& .input_wrapper {
-	}
-
 	& input {
 		width: 100%;
 		height: 2.5rem;
@@ -27,7 +24,7 @@ form {
 	& label {
 		display: block;
 		font-size: large;
-		transform: translateY(-2.3rem);
+		transform: translateY(-2rem);
 		padding-left: 0.5rem;
 	}
 }
