@@ -19,15 +19,15 @@ form {
 		height: 2.5rem;
 		border-radius: $border-radius;
 		border: $border-input;
-		margin-bottom: 1rem;
+		//margin-bottom: 1rem;
 		padding-left: 4rem;
-		//outline: none;
+		outline: none;
 	}
 
 	& label {
 		display: block;
 		font-size: large;
-		transform: translateY(-3rem);
+		transform: translateY(-2.3rem);
 		padding-left: 0.5rem;
 	}
 }

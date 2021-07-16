@@ -6,16 +6,14 @@ const Form = () => {
 			<form>
 				<div className="input_wrapper">
 					<input type="email" name="Email" id="Email" />
-					<label htmlFor="Email" value="email" id="EmailLabel">
+					<label htmlFor="Email" value="email">
 						Email:
 					</label>
 				</div>
 				<div className="input_wrapper">
 					<input type="password" name="Password" id="Password" />
 
-					<label htmlFor="Password" id="PasswordLabel">
-						Heslo:
-					</label>
+					<label htmlFor="Password">Heslo:</label>
 				</div>
 				<Button type="blue">Přihlásit</Button>
 			</form>
