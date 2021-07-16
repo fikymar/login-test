@@ -1,0 +1,30 @@
+.button {
+	border-radius: $border-radius;
+	height: 2.5rem;
+
+	width: auto;
+	cursor: pointer;
+}
+
+.button--blue {
+	background-color: $colorPrimary;
+	color: white;
+	font-size: x-large;
+	border: none;
+}
+
+.button--login {
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 49%;
+	font-size: larger;
+	color: $colorDark;
+	border: $border-input;
+	padding: 0;
+
+	@include breakpoint-down(small) {
+		width: 80%;
+	}
+}

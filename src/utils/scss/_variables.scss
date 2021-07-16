@@ -1,0 +1,21 @@
+//colors
+$colorPrimary: rgb(64, 64, 238);
+$colorDark: rgb(15, 15, 15);
+
+$border-radius: 10px;
+$border-input: 1px solid rgba(115, 15, 15, 0.3);
+
+// //breakpoints
+// @media (min-width: 1024px) {
+// }
+
+$breakpoints-down: (
+	"small": "800px",
+	"medium": "1250px",
+);
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}

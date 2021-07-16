@@ -1,0 +1,39 @@
+.form_wrapper {
+	grid-row: 1/1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+
+	& .input_wrapper {
+	}
+
+	& input {
+		width: 100%;
+		height: 2.5rem;
+		border-radius: $border-radius;
+		border: $border-input;
+		margin-bottom: 1rem;
+		padding-left: 4rem;
+		//outline: none;
+	}
+
+	& label {
+		display: block;
+		font-size: large;
+		transform: translateY(-3rem);
+		padding-left: 0.5rem;
+	}
+}
+
+.password_forgotten {
+	text-decoration: none;
+	color: $colorPrimary;
+	margin-top: 1rem;
+}
