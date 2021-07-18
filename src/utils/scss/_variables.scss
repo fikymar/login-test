@@ -1,17 +1,17 @@
 //colors
-$colorPrimary: rgb(64, 64, 238);
+$colorPrimary: #47bfef;
 $colorDark: darkslategrey;
 
-$border-radius: 10px;
+$border-radius: 20px;
 $border-input: 1px solid rgba(115, 15, 15, 0.3);
-
-// //breakpoints
-// @media (min-width: 1024px) {
-// }
+//$border-input: 1px solid rgba(71, 191, 239, 0.3);
+$transition: 0.5s ease-in-out;
 
 $breakpoints-down: (
-	"small": "800px",
+	"xs": "500",
+	"small": "850px",
 	"medium": "1250px",
+	"large": "1400px",
 );
 
 @mixin breakpoint-down($size) {

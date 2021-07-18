@@ -13,45 +13,85 @@ p {
 
 a {
 	font-size: large;
+	transition: letter-spacing $transition;
+	&:hover,
+	&:focus {
+		letter-spacing: 1px;
+	}
 }
 
 .container {
 	width: 100vw;
 	height: 100vh;
+	background-image: url("../imgs/wave1.svg");
+	background-repeat: no-repeat;
+	background-position: 0 -32vh;
+	background-size: cover;
+	transition: background-image $transition;
+	animation: wave 15s ease-in-out 0s infinite alternate;
+
+	@include breakpoint-down(large) {
+		background-position: 0 -30vh;
+		animation: waveLarge 10s linear 0s infinite alternate;
+	}
+	@include breakpoint-down(medium) {
+		background-position: -100px -28vh;
+		animation: waveMedium 5s linear 0s infinite alternate;
+	}
+
+	@include breakpoint-down(small) {
+		background-position: -500px -28vh;
+		animation: waveSmall 5s ease-in-out 0s infinite alternate;
+	}
 
 	& .header {
 		width: 100vw;
 		height: 30%;
-
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: center;
-		background: $colorPrimary;
+		perspective: 1000px;
 
-		clip-path: polygon(
-			0% 0%,
-			0 75%,
-			5% 74%,
-			9% 73%,
-			13% 72%,
-			17% 71%,
-			22% 69%,
-			26% 67%,
-			32% 65%,
-			36% 64%,
-			42% 64%,
-			47% 66%,
-			53% 70%,
-			57% 73%,
-			64% 76%,
-			70% 76%,
-			77% 74%,
-			84% 71%,
-			91% 67%,
-			95% 65%,
-			100% 61%,
-			100% 0%
-		);
+		//background: $colorPrimary;
+
+		// clip-path: polygon(
+		// 	0% 0%,
+		// 	0 75%,
+		// 	5% 74%,
+		// 	9% 73%,
+		// 	13% 72%,
+		// 	17% 71%,
+		// 	22% 69%,
+		// 	26% 67%,
+		// 	32% 65%,
+		// 	36% 64%,
+		// 	42% 64%,
+		// 	47% 66%,
+		// 	53% 70%,
+		// 	57% 73%,
+		// 	64% 76%,
+		// 	70% 76%,
+		// 	77% 74%,
+		// 	84% 71%,
+		// 	91% 67%,
+		// 	95% 65%,
+		// 	100% 61%,
+		// 	100% 0%
+		// );
+
+		& #logo {
+			transform-origin: center;
+			transition: transform $transition;
+			//pointer-events: auto;
+			&:hover {
+				transform: rotate3d(0, -1, -1, 360deg) scale(0.5);
+			}
+
+			@include breakpoint-down(xs) {
+				height: 100px;
+				width: auto;
+			}
+		}
 	}
 
 	.bottom_container {
@@ -62,12 +102,11 @@ a {
 
 		& .main_wrapper {
 			width: 25vw;
-			height: 100%;
-			//background: red;
+			height: 85%;
 			display: grid;
 			grid-template-columns: auto;
-			grid-template-rows: 3fr 1fr 1.5fr 1fr;
-			row-gap: 5px;
+			grid-template-rows: 2fr 1fr 1fr 1fr;
+			//row-gap: 5px;
 			align-items: stretch;
 
 			@include breakpoint-down(medium) {
@@ -76,9 +115,11 @@ a {
 
 			@include breakpoint-down(small) {
 				width: 100vw;
+				height: 90%;
 			}
 
 			& .or {
+				grid-row: 2/2;
 				align-self: center;
 			}
 
@@ -100,6 +141,7 @@ a {
 				flex-direction: row;
 				align-items: center;
 				margin-bottom: 2rem;
+				justify-content: center;
 
 				@include breakpoint-down(medium) {
 					justify-content: center;
@@ -116,5 +158,60 @@ a {
 				}
 			}
 		}
+	}
+}
+
+@keyframes wave {
+	0% {
+		background-position: 0 -32vh;
+	}
+
+	50% {
+		background-position: 100% -36vh;
+	}
+
+	100% {
+		background-position: 0 -32vh;
+	}
+}
+@keyframes waveLarge {
+	0% {
+		background-position: 0 -30vh;
+	}
+
+	50% {
+		background-position: 50% -35vh;
+	}
+
+	100% {
+		background-position: 0 -30vh;
+	}
+}
+
+@keyframes waveMedium {
+	0% {
+		background-position: -100px -28vh;
+	}
+
+	50% {
+		background-position: -500px -32vh;
+	}
+
+	100% {
+		background-position: -100px -28vh;
+	}
+}
+
+@keyframes waveSmall {
+	0% {
+		background-position: -500px -28vh;
+	}
+
+	50% {
+		background-position: -100px -25vh;
+	}
+
+	100% {
+		background-position: -500px -28vh;
 	}
 }

@@ -4,6 +4,13 @@
 
 	width: auto;
 	cursor: pointer;
+	transition: transform $transition, letter-spacing $transition;
+
+	&:hover,
+	&:focus {
+		transform: scaleX(1.05);
+		letter-spacing: 0.5px;
+	}
 }
 
 .button--blue {
@@ -23,6 +30,7 @@
 	color: $colorDark;
 	border: $border-input;
 	padding: 0;
+	margin-top: 5px;
 
 	@include breakpoint-down(small) {
 		width: 80%;

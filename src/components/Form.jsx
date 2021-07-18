@@ -36,7 +36,7 @@ const Form = () => {
 				target="_blank"
 				rel="noreferrer noopener"
 			>
-				Zapomněl jsem heslo &gt;
+				Zapomněl jsem heslo <span>&gt;</span>
 			</a>
 		</div>
 	);

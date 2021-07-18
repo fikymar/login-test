@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Form from "../components/Form";
+import logo from "../utils/imgs/Bloxies - logo.png";
 
 const facebookLogo = (
 	<svg
@@ -28,7 +29,7 @@ const googleLogo = (
 		width="32"
 		viewBox="0 0 512 512"
 	>
-		<rect width="512" height="512" rx="15%" fill="#fff" />
+		<rect width="512" height="512" rx="15%" fill="transparent" />
 		<path
 			fill="#4285f4"
 			d="M386 400c45-42 65-112 53-179H260v74h102c-4 24-18 44-38 57z"
@@ -48,57 +49,24 @@ const googleLogo = (
 	</svg>
 );
 
-const logoPlaceholder = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="150"
-		height="150"
-		viewBox="0 0 300 150"
-	>
-		<rect fill="#ddd" width="300" height="150" />
-		<text
-			fill="rgba(0,0,0,0.5)"
-			fontFamily="sans-serif"
-			fontSize="30"
-			dy="10.5"
-			fontWeight="bold"
-			x="50%"
-			y="50%"
-			textAnchor="middle"
-		>
-			logo
-		</text>
-	</svg>
-);
-
 const Login = () => {
 	return (
 		<div className="container">
-			<div className="header">{logoPlaceholder}</div>
+			<div className="header">
+				<img id="logo" src={logo} alt="logo" height="150px" />
+			</div>
 			<div className="bottom_container">
 				<div className="main_wrapper">
 					<Form />
 					<p className="or">Nebo</p>
 					<div className="section_login">
 						<Button>
-							Přihlásit přes{" "}
-							<a
-								href="https://www.facebook.com/"
-								target="_blank"
-								rel="noreferrer noopener"
-							>
-								{facebookLogo}
-							</a>
+							Přihlásit přes
+							{facebookLogo}
 						</Button>
 						<Button>
-							Přihlásit přes{" "}
-							<a
-								href="https://www.google.com/"
-								target="_blank"
-								rel="noreferrer noopener"
-							>
-								{googleLogo}
-							</a>
+							Přihlásit přes
+							{googleLogo}
 						</Button>
 					</div>
 					<section className="section_registration">

@@ -1,12 +1,22 @@
 .button {
-  border-radius: 10px;
+  border-radius: 20px;
   height: 2.5rem;
   width: auto;
   cursor: pointer;
+  -webkit-transition: letter-spacing 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: letter-spacing 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, letter-spacing 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, letter-spacing 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.button:hover, .button:focus {
+  -webkit-transform: scaleX(1.05);
+          transform: scaleX(1.05);
+  letter-spacing: 0.5px;
 }
 
 .button--blue {
-  background-color: #4040ee;
+  background-color: #47bfef;
   color: white;
   font-size: x-large;
   border: none;
@@ -28,9 +38,10 @@
   color: darkslategrey;
   border: 1px solid rgba(115, 15, 15, 0.3);
   padding: 0;
+  margin-top: 5px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .button--login {
     width: 80%;
   }
@@ -66,7 +77,7 @@ form {
 form input {
   width: 100%;
   height: 2.5rem;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid rgba(115, 15, 15, 0.3);
   padding-left: 4rem;
   outline: none;
@@ -88,14 +99,21 @@ form input::placeholder {
   color: transparent;
 }
 
+form input:focus, form input:hover {
+  border: none;
+  -webkit-box-shadow: 0 0 0 2px rgba(71, 191, 239, 0.3);
+          box-shadow: 0 0 0 2px rgba(71, 191, 239, 0.3);
+}
+
 form label {
   display: block;
   font-size: large;
-  -webkit-transform: translateY(-2rem);
-          transform: translateY(-2rem);
+  -webkit-transform: translateY(-2.2rem);
+          transform: translateY(-2.2rem);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 5px;
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
@@ -110,7 +128,7 @@ form input:not(:placeholder-shown) + label {
 
 .password_forgotten {
   text-decoration: none;
-  color: #4040ee;
+  color: #47bfef;
   margin-top: 1rem;
 }
 
@@ -125,11 +143,49 @@ p {
 
 a {
   font-size: large;
+  -webkit-transition: letter-spacing 0.5s ease-in-out;
+  transition: letter-spacing 0.5s ease-in-out;
+}
+
+a:hover, a:focus {
+  letter-spacing: 1px;
 }
 
 .container {
   width: 100vw;
   height: 100vh;
+  background-image: url("../imgs/wave1.svg");
+  background-repeat: no-repeat;
+  background-position: 0 -32vh;
+  background-size: cover;
+  -webkit-transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
+  -webkit-animation: wave 15s ease-in-out 0s infinite alternate;
+          animation: wave 15s ease-in-out 0s infinite alternate;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    background-position: 0 -30vh;
+    -webkit-animation: waveLarge 10s linear 0s infinite alternate;
+            animation: waveLarge 10s linear 0s infinite alternate;
+  }
+}
+
+@media (max-width: 1250px) {
+  .container {
+    background-position: -100px -28vh;
+    -webkit-animation: waveMedium 5s linear 0s infinite alternate;
+            animation: waveMedium 5s linear 0s infinite alternate;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    background-position: -500px -28vh;
+    -webkit-animation: waveSmall 5s ease-in-out 0s infinite alternate;
+            animation: waveSmall 5s ease-in-out 0s infinite alternate;
+  }
 }
 
 .container .header {
@@ -138,15 +194,35 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #4040ee;
-  -webkit-clip-path: polygon(0% 0%, 0 75%, 5% 74%, 9% 73%, 13% 72%, 17% 71%, 22% 69%, 26% 67%, 32% 65%, 36% 64%, 42% 64%, 47% 66%, 53% 70%, 57% 73%, 64% 76%, 70% 76%, 77% 74%, 84% 71%, 91% 67%, 95% 65%, 100% 61%, 100% 0%);
-          clip-path: polygon(0% 0%, 0 75%, 5% 74%, 9% 73%, 13% 72%, 17% 71%, 22% 69%, 26% 67%, 32% 65%, 36% 64%, 42% 64%, 47% 66%, 53% 70%, 57% 73%, 64% 76%, 70% 76%, 77% 74%, 84% 71%, 91% 67%, 95% 65%, 100% 61%, 100% 0%);
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.container .header #logo {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.container .header #logo:hover {
+  -webkit-transform: rotate3d(0, -1, -1, 360deg) scale(0.5);
+          transform: rotate3d(0, -1, -1, 360deg) scale(0.5);
+}
+
+@media (max-width: 500) {
+  .container .header #logo {
+    height: 100px;
+    width: auto;
+  }
 }
 
 .container .bottom_container {
@@ -161,14 +237,13 @@ a {
 
 .container .bottom_container .main_wrapper {
   width: 25vw;
-  height: 100%;
+  height: 85%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  -ms-grid-rows: 3fr 1fr 1.5fr 1fr;
-      grid-template-rows: 3fr 1fr 1.5fr 1fr;
-  row-gap: 5px;
+  -ms-grid-rows: 2fr 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr 1fr 1fr;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -180,13 +255,16 @@ a {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .container .bottom_container .main_wrapper {
     width: 100vw;
+    height: 90%;
   }
 }
 
 .container .bottom_container .main_wrapper .or {
+  -ms-grid-row: 2;
+  grid-row: 2/2;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -207,7 +285,7 @@ a {
           justify-content: space-between;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .container .bottom_container .main_wrapper .section_login {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -230,6 +308,9 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 1250px) {
@@ -247,6 +328,102 @@ a {
 
 .container .bottom_container .main_wrapper .section_registration a {
   padding-left: 0.5rem;
-  color: #4040ee;
+  color: #47bfef;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    background-position: 0 -32vh;
+  }
+  50% {
+    background-position: 100% -36vh;
+  }
+  100% {
+    background-position: 0 -32vh;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 -32vh;
+  }
+  50% {
+    background-position: 100% -36vh;
+  }
+  100% {
+    background-position: 0 -32vh;
+  }
+}
+
+@-webkit-keyframes waveLarge {
+  0% {
+    background-position: 0 -30vh;
+  }
+  50% {
+    background-position: 50% -35vh;
+  }
+  100% {
+    background-position: 0 -30vh;
+  }
+}
+
+@keyframes waveLarge {
+  0% {
+    background-position: 0 -30vh;
+  }
+  50% {
+    background-position: 50% -35vh;
+  }
+  100% {
+    background-position: 0 -30vh;
+  }
+}
+
+@-webkit-keyframes waveMedium {
+  0% {
+    background-position: -100px -28vh;
+  }
+  50% {
+    background-position: -500px -32vh;
+  }
+  100% {
+    background-position: -100px -28vh;
+  }
+}
+
+@keyframes waveMedium {
+  0% {
+    background-position: -100px -28vh;
+  }
+  50% {
+    background-position: -500px -32vh;
+  }
+  100% {
+    background-position: -100px -28vh;
+  }
+}
+
+@-webkit-keyframes waveSmall {
+  0% {
+    background-position: -500px -28vh;
+  }
+  50% {
+    background-position: -100px -25vh;
+  }
+  100% {
+    background-position: -500px -28vh;
+  }
+}
+
+@keyframes waveSmall {
+  0% {
+    background-position: -500px -28vh;
+  }
+  50% {
+    background-position: -100px -25vh;
+  }
+  100% {
+    background-position: -500px -28vh;
+  }
 }
 /*# sourceMappingURL=App.css.map */
