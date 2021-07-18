@@ -190,6 +190,14 @@ a:hover, a:focus {
   }
 }
 
+@media (min-width: 600px) and (orientation: landscape) {
+  .container {
+    background-position: -300px -10vh;
+    -webkit-animation: waveLandscape 10s ease-in-out 0s infinite alternate;
+            animation: waveLandscape 10s ease-in-out 0s infinite alternate;
+  }
+}
+
 .container .header {
   width: 100vw;
   height: 30%;
@@ -223,6 +231,13 @@ a:hover, a:focus {
 @media (max-width: 500) {
   .container .header #logo {
     height: 100px;
+    width: auto;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  .container .header #logo {
+    height: 80px;
     width: auto;
   }
 }
@@ -410,7 +425,7 @@ a:hover, a:focus {
     background-position: -200px -8vh;
   }
   50% {
-    background-position: -1200px -30vh;
+    background-position: -1200px -25vh;
   }
   100% {
     background-position: -200px -8vh;
@@ -422,10 +437,34 @@ a:hover, a:focus {
     background-position: -200px -8vh;
   }
   50% {
-    background-position: -1200px -30vh;
+    background-position: -1200px -25vh;
   }
   100% {
     background-position: -200px -8vh;
+  }
+}
+
+@-webkit-keyframes waveLandscape {
+  0% {
+    background-position: -200px 0vh;
+  }
+  50% {
+    background-position: -1000px -18vh;
+  }
+  100% {
+    background-position: -200px 0;
+  }
+}
+
+@keyframes waveLandscape {
+  0% {
+    background-position: -200px 0vh;
+  }
+  50% {
+    background-position: -1000px -18vh;
+  }
+  100% {
+    background-position: -200px 0;
   }
 }
 /*# sourceMappingURL=App.css.map */
