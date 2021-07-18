@@ -155,7 +155,7 @@ a:hover, a:focus {
   width: 100vw;
   height: 100vh;
   background-image: url("../imgs/wave1.svg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-position: 0 -32vh;
   background-size: cover;
   -webkit-transition: background-image 0.5s ease-in-out;
@@ -174,17 +174,19 @@ a:hover, a:focus {
 
 @media (max-width: 1250px) {
   .container {
-    background-position: -100px -28vh;
-    -webkit-animation: waveMedium 5s linear 0s infinite alternate;
-            animation: waveMedium 5s linear 0s infinite alternate;
+    background-position: -300px -20vh;
+    background-image: url("../imgs/waveMobile.svg");
+    -webkit-animation: waveMedium 10s ease-in-out 0s infinite alternate;
+            animation: waveMedium 10s ease-in-out 0s infinite alternate;
   }
 }
 
 @media (max-width: 850px) {
   .container {
-    background-position: -500px -28vh;
-    -webkit-animation: waveSmall 5s ease-in-out 0s infinite alternate;
-            animation: waveSmall 5s ease-in-out 0s infinite alternate;
+    background-image: url("../imgs/waveMobile.svg");
+    background-position: -300px -20vh;
+    -webkit-animation: waveSmall 10s ease-in-out 0s infinite alternate;
+            animation: waveSmall 10s ease-in-out 0s infinite alternate;
   }
 }
 
@@ -381,49 +383,49 @@ a:hover, a:focus {
 
 @-webkit-keyframes waveMedium {
   0% {
-    background-position: -100px -28vh;
+    background-position: -200px -200px;
   }
   50% {
-    background-position: -500px -32vh;
+    background-position: -1200px -300px;
   }
   100% {
-    background-position: -100px -28vh;
+    background-position: -200px -200px;
   }
 }
 
 @keyframes waveMedium {
   0% {
-    background-position: -100px -28vh;
+    background-position: -200px -200px;
   }
   50% {
-    background-position: -500px -32vh;
+    background-position: -1200px -300px;
   }
   100% {
-    background-position: -100px -28vh;
+    background-position: -200px -200px;
   }
 }
 
 @-webkit-keyframes waveSmall {
   0% {
-    background-position: -500px -28vh;
+    background-position: -200px -8vh;
   }
   50% {
-    background-position: -100px -25vh;
+    background-position: -1200px -30vh;
   }
   100% {
-    background-position: -500px -28vh;
+    background-position: -200px -8vh;
   }
 }
 
 @keyframes waveSmall {
   0% {
-    background-position: -500px -28vh;
+    background-position: -200px -8vh;
   }
   50% {
-    background-position: -100px -25vh;
+    background-position: -1200px -30vh;
   }
   100% {
-    background-position: -500px -28vh;
+    background-position: -200px -8vh;
   }
 }
 /*# sourceMappingURL=App.css.map */
