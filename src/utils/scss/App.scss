@@ -46,7 +46,7 @@ a {
 		animation: waveSmall 10s ease-in-out 0s infinite alternate;
 	}
 
-	@media (max-width: 600px) and (orientation: landscape) {
+	@media (max-width: 801px) and (orientation: landscape) {
 		background-image: url("../imgs/wave1.svg");
 		background-position: -300px -10vh;
 		animation: waveLandscape 10s ease-in-out 0s infinite alternate;
@@ -100,7 +100,7 @@ a {
 				width: auto;
 			}
 
-			@media (max-width: 600px) and (orientation: landscape) {
+			@media (max-width: 801px) and (orientation: landscape) {
 				height: 80px;
 				width: auto;
 			}
