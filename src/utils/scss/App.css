@@ -447,25 +447,25 @@ a:hover, a:focus {
 
 @-webkit-keyframes waveLandscape {
   0% {
-    background-position: -200px 0vh;
+    background-position: -200px -10vh;
   }
   50% {
-    background-position: -1000px -18vh;
+    background-position: -700px -10vh;
   }
   100% {
-    background-position: -200px 0;
+    background-position: -200px -10vh;
   }
 }
 
 @keyframes waveLandscape {
   0% {
-    background-position: -200px 0vh;
+    background-position: -200px -10vh;
   }
   50% {
-    background-position: -1000px -18vh;
+    background-position: -700px -10vh;
   }
   100% {
-    background-position: -200px 0;
+    background-position: -200px -10vh;
   }
 }
 /*# sourceMappingURL=App.css.map */
