@@ -1,0 +1,81 @@
+.home {
+	width: 100vw;
+	min-height: 100vh;
+
+	& .home_header {
+		background: $colorPrimary;
+		height: 30vh;
+		width: 100vw;
+	}
+}
+
+.home_main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 30vw;
+	//min-height: 70vh;
+
+	@include breakpoint-down(large) {
+		margin: 2rem 25vw;
+	}
+
+	@include breakpoint-down(medium) {
+		margin: 2rem 20vw;
+	}
+
+	@include breakpoint-down(small) {
+		margin: 2rem 0;
+		//margin-bottom: 5rem;
+	}
+
+	@media (max-width: 801px) and (orientation: landscape) {
+		margin: 0;
+	}
+}
+.homeBTN {
+	//padding: 2rem 5rem;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	font-weight: bolder;
+	font-size: larger;
+	width: 14rem;
+	height: 6rem;
+	margin: 1rem;
+	transition: letter-spacing $transition, transform $transition;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+	@media (max-width: 801px) and (orientation: landscape) {
+		width: 40vw;
+	}
+
+	&:last-of-type {
+		@include breakpoint-down(xs) {
+			margin-bottom: 5rem;
+		}
+
+		@media (max-width: 801px) and (orientation: landscape) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&:hover {
+		transform: scaleX(1.05);
+		letter-spacing: 1px;
+	}
+}
+
+.blue {
+	background-color: rgb(28, 140, 214);
+	color: white;
+}
+.turqoise {
+	background-color: rgb(52, 196, 181);
+	color: white;
+}
+.green {
+	background-color: rgb(31, 153, 31);
+	color: white;
+}

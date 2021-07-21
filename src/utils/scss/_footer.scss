@@ -1,0 +1,46 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: 25vw 25vw 25vw 25vw;
+	grid-template-rows: 1;
+	align-items: center;
+	justify-items: center;
+	color: $colorPrimary;
+	list-style-type: none;
+	background-color: white;
+
+	& li {
+		//border-right: $border-input;
+		border: $border-input;
+		border-bottom: none;
+		//border-top: $border-input;
+		width: 25vw;
+		height: 4rem;
+		line-height: 4rem;
+		text-align: center;
+		transition: all $transition;
+
+		&:hover {
+			//background-color: $colorPrimary;
+			//color: white;
+			transform: scaleY(1.2);
+			width: 25.5vw;
+			//background-color: $colorPrimary;
+			//color: white;
+			border-radius: 10px 10px 0 0;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			& a {
+				letter-spacing: 2px;
+			}
+		}
+	}
+
+	& a {
+		text-decoration: none;
+		color: inherit;
+	}
+}

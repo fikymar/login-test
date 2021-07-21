@@ -52,8 +52,11 @@ const googleLogo = (
 const Login = () => {
 	return (
 		<div className="container">
+			<a href="/" style={{ margin: "2rem", color: "grey" }}>
+				Domů
+			</a>
 			<div className="header">
-				<img id="logo" src={logo} alt="logo" height="150px" />
+				<img className="logo" src={logo} alt="logo" height="150px" />
 			</div>
 			<div className="bottom_container">
 				<div className="main_wrapper">

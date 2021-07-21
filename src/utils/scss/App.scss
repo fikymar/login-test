@@ -1,6 +1,8 @@
 @import "variables";
 @import "button";
 @import "form";
+@import "footer";
+@import "home";
 
 body {
 	color: $colorDark;
@@ -52,61 +54,6 @@ a {
 		animation: waveLandscape 10s ease-in-out 0s infinite alternate;
 	}
 
-	& .header {
-		width: 100vw;
-		height: 30%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		perspective: 1000px;
-
-		//background: $colorPrimary;
-
-		// clip-path: polygon(
-		// 	0% 0%,
-		// 	0 75%,
-		// 	5% 74%,
-		// 	9% 73%,
-		// 	13% 72%,
-		// 	17% 71%,
-		// 	22% 69%,
-		// 	26% 67%,
-		// 	32% 65%,
-		// 	36% 64%,
-		// 	42% 64%,
-		// 	47% 66%,
-		// 	53% 70%,
-		// 	57% 73%,
-		// 	64% 76%,
-		// 	70% 76%,
-		// 	77% 74%,
-		// 	84% 71%,
-		// 	91% 67%,
-		// 	95% 65%,
-		// 	100% 61%,
-		// 	100% 0%
-		// );
-
-		& #logo {
-			transform-origin: center;
-			transition: transform $transition;
-			//pointer-events: auto;
-			&:hover {
-				transform: rotate3d(0, -1, -1, 360deg) scale(0.5);
-			}
-
-			@include breakpoint-down(xs) {
-				height: 100px;
-				width: auto;
-			}
-
-			@media (max-width: 801px) and (orientation: landscape) {
-				height: 80px;
-				width: auto;
-			}
-		}
-	}
-
 	.bottom_container {
 		width: 100vw;
 		height: calc(70vh - 2rem);
@@ -121,6 +68,9 @@ a {
 			grid-template-rows: 2fr 1fr 1fr 1fr;
 			//row-gap: 5px;
 			align-items: stretch;
+			@include breakpoint-down(large) {
+				width: 40vw;
+			}
 
 			@include breakpoint-down(medium) {
 				width: 50vw;
@@ -203,7 +153,7 @@ a {
 
 @keyframes waveMedium {
 	0% {
-		background-position: -200px -200px;
+		background-position: -200px -100px;
 	}
 
 	50% {
@@ -211,7 +161,7 @@ a {
 	}
 
 	100% {
-		background-position: -200px -200px;
+		background-position: -200px -100px;
 	}
 }
 
@@ -247,10 +197,67 @@ a {
 	}
 
 	50% {
-		background-position: -700px -10vh;
+		background-position: -500px -10vh;
 	}
 
 	100% {
 		background-position: -200px -10vh;
+	}
+}
+
+.header {
+	width: 100vw;
+	height: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 1000px;
+
+	//background: $colorPrimary;
+
+	// clip-path: polygon(
+	// 	0% 0%,
+	// 	0 75%,
+	// 	5% 74%,
+	// 	9% 73%,
+	// 	13% 72%,
+	// 	17% 71%,
+	// 	22% 69%,
+	// 	26% 67%,
+	// 	32% 65%,
+	// 	36% 64%,
+	// 	42% 64%,
+	// 	47% 66%,
+	// 	53% 70%,
+	// 	57% 73%,
+	// 	64% 76%,
+	// 	70% 76%,
+	// 	77% 74%,
+	// 	84% 71%,
+	// 	91% 67%,
+	// 	95% 65%,
+	// 	100% 61%,
+	// 	100% 0%
+	// );
+
+	& .logo {
+		transform-origin: center;
+		transition: transform $transition;
+		padding: 1rem;
+		filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
+		//pointer-events: auto;
+		&:hover {
+			transform: rotate3d(0, -1, -1, 360deg) scale(0.5);
+		}
+
+		@include breakpoint-down(xs) {
+			height: 80px;
+			width: auto;
+		}
+
+		@media (max-width: 801px) and (orientation: landscape) {
+			height: 80px;
+			width: auto;
+		}
 	}
 }
